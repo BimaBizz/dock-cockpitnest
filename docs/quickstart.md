@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed on your development ma
 Start by cloning the CockpitNest repository from GitHub:
 
 ```bash title="clone repository"
-git clone https://github.com/yourusername/cockpitnest.git
+git clone https://github.com/BimaBizz/cockpitnest.git
 cd cockpitnest
 ```
 
