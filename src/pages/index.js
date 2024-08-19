@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -33,11 +34,12 @@ export default function Home() {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="CockpitNext, Create your website just in minutes">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
       </main>
+      <SpeedInsights />
     </Layout>
   );
 }
