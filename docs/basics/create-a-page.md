@@ -14,7 +14,7 @@ Creating new pages in **CockpitNest** is straightforward, thanks to the powerful
 3.  Click on **Create Page**
 4.  Choose type of your page. type suported:
     -   **Layout** (no need configuration)
-    -   **Collection** ([need configuration](https://dock-cockpitnest.vercel.app/docs/frontend/pages-type/singleton-type))
+    -   **Collection** ([need configuration](https://dock-cockpitnest.vercel.app/docs/frontend/pages-type/collection-type))
     -   **Singleton** ([need configuration](https://dock-cockpitnest.vercel.app/docs/frontend/pages-type/singleton-type))
 5.  fill in all fields.
 6.  Save the page.
