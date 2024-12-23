@@ -9,11 +9,11 @@ In Cockpit CMS v2, you can configure specific API endpoints to be accessed witho
 
 1.  **Log in to Your Cockpit Installation:**
     
-    Navigate to your Cockpit CMS installation at `https://cockpit.example.com`.
+    Navigate to your Cockpit CMS installation at ``.
     
 2.  **Access the Roles Section:**
     
-    Go to the Roles section at `https://cockpit.example.com/system/users/roles`.
+    Go to the Roles section at `https://localhost/your-cockpit-folder/system/users/roles`.
     
 3.  **Add a New Role:**
     
@@ -21,14 +21,14 @@ In Cockpit CMS v2, you can configure specific API endpoints to be accessed witho
     -   Enter an **App ID** (e.g., `public`).
     -   Provide a **Name** for the role (e.g., `Public API`).
     -   Set the permissions as needed. Typically, you will want to allow access to the collections or endpoints that you intend to make public. For example:
-        -   **Custom Endpoints**: Configure access as required.
+    -   **Custom Endpoints**: Configure access as required.
     -   Click **Save** to create the role.
 
 ## Step 2: Configure Public API Access
 
 1.  **Navigate to the API Section:**
     
-    Go to the API section at `https://cockpit.example.com/system/api`.
+    Go to the API section at `https://localhost/your-cockpit-folder/system/api`.
     
 2.  **Set Up Public API:**
     

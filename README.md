@@ -38,7 +38,7 @@ Welcome to the **Project Documentation** repository. This project utilizes **Coc
     
 
     ```
-    HOST=https://example.com
+    HOST=https://localhost/your-cockpit-folder
     DOMAIN=https://yourdomain.com
     ```
 4.  **Build Tailwind CSS**: Run the build command to generate your Tailwind CSS styles:
@@ -73,7 +73,7 @@ Open your browser and navigate to `http://localhost:3000` (or your specified por
 ### Adding Custom Components
 
 1.  **Navigate to Cockpit CMS**:  
-    Open Cockpit CMS and go to the **Components** section (`https://example.com/layout-components`).
+    Open Cockpit CMS and go to the **Components** section (`https://localhost/your-cockpit-folder/layout-components`).
     
 2.  **Add a New Component**:  
     Click on **Add Component**, fill in the relevant fields (such as `title`, `class`, etc.), and save the component.

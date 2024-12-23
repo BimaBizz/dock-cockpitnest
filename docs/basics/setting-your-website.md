@@ -10,7 +10,7 @@ Cockpit CMS v2 allows you to centralize and manage your website settings, such a
 
 1.  **Access the Settings Section:**
     
-    Go to the Pages section by navigating to `https://cockpit.example.com/pages/settings`.
+    Go to the Pages section by navigating to `https://localhost/your-cockpit-folder/pages/settings`.
 
 2.  **Fill all Fields**
 
@@ -22,10 +22,10 @@ Cockpit CMS v2 allows you to centralize and manage your website settings, such a
 
             ```json title="meta field example"
             {
-              custom: 'meta',
+                'google-site-verification': 'just-sample',
+                'yandex-verification': 'just-sample',
             },
             ```
     -   Unsupported Fields with this Template :
         -   Scripts
-        -   Preview
         -   Layout

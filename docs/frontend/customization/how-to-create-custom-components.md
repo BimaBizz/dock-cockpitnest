@@ -7,7 +7,7 @@
 
 -   **Login**: Log in to your Cockpit CMS admin dashboard.
 -   **Navigation**: Go to the **Components** section. This may be accessible through the following URL:  
-    `https://example.com/layout-components`.
+    `https://localhost/your-cockpit-folder/layout-components`.
 
 ### 2. Add a New Component
 
@@ -89,4 +89,4 @@ const ComponentRenderer = ({ component }) => {
 
 ## Notes
 
--   If you are confused about mapping the components you have created, you can visit `https://example.com/api/pages/page/{id}` ([must have public API enabled](https://docs.cockpit.dev/docs/basics/setting-api-cockpit))
+-   If you are confused about mapping the components you have created, you can visit `https://localhost/your-cockpit-folder/api/pages/page/{id}` ([must have public API enabled](https://docs.cockpit.dev/docs/basics/setting-api-cockpit))

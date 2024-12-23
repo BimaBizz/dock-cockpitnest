@@ -30,24 +30,21 @@ cd cockpitnest
 
 ### Install Dependencies
 
-Install the required dependencies for both the Next.js frontend and the Cockpit CMS backend.
+Install the required dependencies for both the Next.js frontend
 
 #### Install Next.js Dependencies
 
-Create folder and navigate to the `frontend` directory then install the dependencies:
-
 ```bash title="install dependencies NextJS"
-cd frontend
+cd cockpitnest
 npm install
 ``` 
 
 #### Install Cockpit CMS
 
-Create folder and navigate to the `backend` directory and install Cockpit CMS:
-
 1.  Download the latest version of Cockpit CMS from the official repository or directly from the [Cockpit CMS website](https://getcockpit.com/).
-2.  Extract the files into the `backend` directory.
-3.  Ensure the `storage` and `config` directories are writable.
+2.  Extract the files into the your htdocs directory.
+4.  Ensure the `storage` and `config` directories are writable.
+3.  Go to url of your cockpit cms `/install`
 
 ### Configure Environment Variables
 
@@ -55,15 +52,18 @@ You'll need to set up environment variables for the frontend.
 
 #### Frontend (.env)
 
-Create a `.env` file in the `frontend` directory and add your environment variables:
+Rename `.env_sample` to `.env` on cockpitnest directory and fill your environment variables:
 
 ```plaintext title="frontend/.env"
-HOST=https://your.cockpit.domain
-DOMAIN=https://your.main.domain
+NEXT_HOST=http://localhost/cockpit-pro
+NEXT_ASSETS_URL=http://localhost/cockpit-pro/storage/uploads
+NEXT_MENU_NAME=bizzcode
 
-# clientSide (Optional if you want to create components with CSR)
 
-NEXT_PUBLIC_HOST=https://your.cockpit.domain
+NEXT_PUBLIC_ASSETS_URL=http://localhost/cockpit-pro/storage/uploads
+NEXT_PUBLIC_HOST=http://localhost/cockpit-pro
+NEXT_PUBLIC_UR_DOMAIN=https://yourdomain.com
+NEXT_PUBLIC_COCKPIT_URL=localhost
 ```
 
 #### Backend (Optional - config/config.php)
@@ -84,13 +84,9 @@ Edit the `config.php` file in the `backend/config` directory to set up your data
 
 #### Start the Cockpit CMS Backend
 
-Navigate to the `backend` directory and start the Cockpit CMS server:
+Navigate to Cockpit CMS
 
-```bash title="start your cockpit cms"
-composer serve
-``` 
-
-This will start Cockpit CMS on `http://localhost:8080`.
+This will start Cockpit CMS on ``.
 
 #### Start the Next.js Frontend
 
@@ -105,7 +101,7 @@ This will start the Next.js frontend on `http://localhost:3000`.
 ### Access Your Project
 
 -   **Frontend:** Open your browser and navigate to `http://localhost:3000` to view your site.
--   **Backend:** Access the Cockpit CMS admin interface at `http://localhost:4000/cockpit`.
+-   **Backend:** Access the Cockpit CMS admin interface at ``.
 
 ### Deploy Your Project
 

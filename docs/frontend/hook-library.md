@@ -11,7 +11,7 @@ This hook fetches route data from the server. The data is used to determine the 
 
 ```js
 export const fetchRoutes = async () => {
-    const response = await fetch(`${process.env.HOST}/api/pages/routes`, {
+    const response = await fetch(`${process.env.NEXT_HOST}/api/pages/routes`, {
         cache: 'no-cache'
     });
     const data = await response.json();
@@ -19,7 +19,7 @@ export const fetchRoutes = async () => {
 };
 ``` 
 
--   **URL**: `${process.env.HOST}/api/pages/routes` (replace with your actual API URL).
+-   **URL**: `${process.env.NEXT_HOST}/api/pages/routes` (replace with your actual API URL).
 -   **Cache Control**: The `cache: 'no-cache'` option ensures that the response is not cached.
 -   **Return Value**: Returns the `default` field of the fetched JSON data, representing the routes.
 
@@ -31,7 +31,7 @@ This hook fetches layout data for a specific page based on the provided route (`
 
 ```js
 export const fetchLayout = async (slug) => {
-    const response = await fetch(`${process.env.HOST}/api/pages/page?route=${slug}`, {
+    const response = await fetch(`${process.env.NEXT_HOST}/api/pages/page?route=${slug}`, {
         cache: 'no-cache'
     });
     const data = await response.json();
@@ -39,7 +39,7 @@ export const fetchLayout = async (slug) => {
 };
 ``` 
 
--   **URL**: `${process.env.HOST}/api/pages/page?route=${slug}` (replace with your actual API URL).
+-   **URL**: `${process.env.NEXT_HOST}/api/pages/page?route=${slug}` (replace with your actual API URL).
 -   **Parameter**: `slug` - The route or slug of the page for which layout data is requested.
 -   **Cache Control**: The `cache: 'no-cache'` option ensures the data fetched is always up-to-date.
 -   **Return Value**: Returns the entire fetched JSON object containing the page layout data.
@@ -50,9 +50,9 @@ export const fetchLayout = async (slug) => {
 
 This hook retrieves menu data based on the provided menu name (`name`). It is useful for fetching dynamic menus that are managed via an API.
 
-```
+```js
 export const fetchMenus = async (name) => {
-    const response = await fetch(`${process.env.HOST}/api/pages/menu/${name}`, {
+    const response = await fetch(`${process.env.NEXT_HOST}/api/pages/menu/${name}`, {
         cache: 'no-cache'
     });
     const data = await response.json();
@@ -60,7 +60,7 @@ export const fetchMenus = async (name) => {
 };
 ``` 
 
--   **URL**: `${process.env.HOST}/api/pages/menu/${name}` (replace with your actual API URL).
+-   **URL**: `${process.env.NEXT_HOST}/api/pages/menu/${name}` (replace with your actual API URL).
 -   **Parameter**: `name` - The name of the menu to be fetched.
 -   **Cache Control**: The `cache: 'no-cache'` option ensures the menu data is always fresh.
 -   **Return Value**: Returns the menu data in JSON format.
@@ -73,7 +73,7 @@ This hook fetches application settings data from the server. These settings migh
 
 ```js
 export const fetchSettings = async () => {
-    const response = await fetch(`${process.env.HOST}/api/pages/settings`, {
+    const response = await fetch(`${process.env.NEXT_HOST}/api/pages/settings`, {
         cache: 'no-cache'
     });
     const data = await response.json();
@@ -81,7 +81,7 @@ export const fetchSettings = async () => {
 };
 ``` 
 
--   **URL**: `${process.env.HOST}/api/pages/settings` (replace with your actual API URL).
+-   **URL**: `${process.env.NEXT_HOST}/api/pages/settings` (replace with your actual API URL).
 -   **Cache Control**: The `cache: 'no-cache'` option ensures that settings are always current.
 -   **Return Value**: Returns the settings data in JSON format.
 
@@ -93,7 +93,7 @@ This hook retrieves sitemap data from the server, which contains information abo
 
 ```js
 export const fetchSitemap = async () => {
-    const response = await fetch(`${process.env.HOST}/api/pages/sitemap`, {
+    const response = await fetch(`${process.env.NEXT_HOST}/api/pages/sitemap?deep=5`, {
         cache: 'no-cache'
     });
     const data = await response.json();
@@ -101,14 +101,37 @@ export const fetchSitemap = async () => {
 };
 ``` 
 
--   **URL**: `${process.env.HOST}/api/pages/sitemap` (replace with your actual API URL).
+-   **URL**: `${process.env.NEXT_HOST}/api/pages/sitemap?deep=5` (replace with your actual API URL).
 -   **Cache Control**: The `cache: 'no-cache'` option ensures that the sitemap data is always up-to-date.
 -   **Return Value**: Returns the sitemap data in JSON format.
 
 ----------
 
+### Hook: `fetchSearch`
+
+This hook retrieves search results from the server based on the provided index and query. It is useful for implementing search functionality within the application.
+
+```js
+export const fetchSearch = async (index, query) => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/detektivo/search/${index}?q=${query}`, {
+        cache: 'no-cache'
+    });
+    const data = await response.json();
+    return data;
+};
+``` 
+
+-   **URL**: `${process.env.NEXT_PUBLIC_HOST}/api/detektivo/search/${index}?q=${query}` (replace with your actual API URL).
+-   **Parameters**: 
+    - `index` - The search index to be queried.
+    - `query` - The search query string.
+-   **Cache Control**: The `cache: 'no-cache'` option ensures the search results are always fresh.
+-   **Return Value**: Returns the search results in JSON format.
+
+----------
+
 ## General Notes:
 
--   **Environment Variables**: All hooks rely on `process.env.HOST` to construct the base URL for the API. Make sure this environment variable is properly configured with the correct domain.
+-   **Environment Variables**: All hooks rely on `process.env.NEXT_HOST` or `process.env.NEXT_PUBLIC_HOST` to construct the base URL for the API. Make sure these environment variables are properly configured with the correct domain.
 -   **No Caching**: Each hook is configured with the `cache: 'no-cache'` option to ensure fresh data is retrieved from the server every time. This is useful for dynamic content but may be modified if caching is preferred for performance reasons.
 -   **Error Handling**: The provided code does not include explicit error handling. It is recommended to add error handling logic (such as `try-catch` blocks) to manage potential errors gracefully.

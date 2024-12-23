@@ -9,7 +9,7 @@ Creating new pages in **CockpitNest** is straightforward, thanks to the powerful
 
 ## Create a New Pages
 
-1.  **Log in to Cockpit CMS** at `http://localhost:8080`.
+1.  **Log in to Cockpit CMS** at ``.
 2.  Navigate to the **Pages** section.
 3.  Click on **Create Page**
 4.  Choose type of your page. type suported:
